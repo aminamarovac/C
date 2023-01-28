@@ -1,5 +1,5 @@
 // #include <stdio.h> 
-// main() 
+// int main() 
 // { 
 //  double a1, a2, b1, b2, x, y; 
 //  printf("Unesite koeficijente:\na1= "); scanf("%lf", &a1); 
@@ -20,7 +20,7 @@
 //  } 
 //  return 0; 
 // }
-// #include <stdio.h> 
+// // #include <stdio.h> 
 // #include <math.h> 
 // #define PI 3.141592 
 // main() 
@@ -57,3 +57,9 @@
 //  getche(); 
 //  return 0; 
 // }
+
+#include<stdio.h>
+int main(){
+    printf("Hello");
+    return 0;
+}
