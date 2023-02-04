@@ -58,8 +58,22 @@
 //  return 0; 
 // }
 
-#include<stdio.h>
-int main(){
-    printf("Hello");
-    return 0;
-}
+// #include<stdio.h>
+// int main(){
+//     printf("Hello");
+//     return 0;
+// }
+// #include<stdio.h>
+// main(){
+// int a,n,i=1,stepen=1;
+// printf("a=");
+// scanf("%d",&a);
+// printf("n=");
+// scanf("%d",&n);
+// while(i<=n){
+//     stepen*=a;
+//     i++;
+// }
+// printf("%d na %d je %d",a,n,stepen);
+// return 0;
+// }
