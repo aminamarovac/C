@@ -323,3 +323,166 @@
 //  printf("\n Broj elemenata jednakih nuli: %d", nule); 
 //  return 0; 
 // }
+
+// Nacrtati strukturni dijagram toka algoritma i na programskom jeziku C napisati program koji cita brojeve sa standardnog 
+// ulaza,sve dok ne pronadje prvi simetricni broj.Prikazati taj broj.Primeri simetricnih brojeva:1221,1331,8448...
+// #include <stdio.h>
+// #include <stdbool.h>
+
+// bool is_symmetric(int num) {
+//     int reverse = 0, original = num;
+//     while (num != 0) {
+//         int last_digit = num % 10;
+//         reverse = reverse * 10 + last_digit;
+//         num /= 10;
+//     }
+//     return reverse == original;
+// }
+
+// int main() {
+//     int num;
+//     while (true) {
+//         printf("Unesite broj: ");
+//         scanf("%d", &num);
+//         if (is_symmetric(num)) {
+//             printf("Pronadjen simetrični broj: %d\n", num);
+//             break;
+//         }
+//     }
+//     return 0;
+// }
+// Program čita brojeve sa standardnog ulaza koristeći funkciju scanf i provjerava da li je taj broj simetričan koristeći funkciju is_symmetric. Ako se pronađe simetričan broj, program ispisuje taj broj i prekida se. Ukoliko nije pronađen simetričan broj, program se nastavlja sa čitanjem sljedećeg broja.
+
+
+// #include <stdio.h> 
+// #define MAX 100 
+// typedef struct ucenci 
+// { 
+//  char ime[15]; 
+//  char prezime[15]; 
+//  char adresa[15]; 
+//  int razred; 
+//  int odeljenje; 
+// } UCENICI; 
+// main() 
+// { 
+//  UCENICI ucenik[MAX]; 
+//  int i, n, x; 
+//  FILE *dato; 
+//  if((dato=fopen("ucenik.txt","w"))==NULL) 
+//  { 
+//  printf("\n Greska pri otvaranju datoteke!"); 
+//  exit(1); 
+//  } 
+//  printf("\n Broj ucenika: "); 
+//  scanf("%d",&n); 
+//  for(i=0; i<n; i++) 
+//  { 
+//  printf("\n -UCENIK %d-\n",i+1); 
+//  printf(" Ime: "); 
+//  scanf("%s", &ucenik[i].ime); 
+//  printf(" Prezime: "); 
+//  while(getchar()!='\n'); 
+//  scanf("%s", &ucenik[i].prezime); 
+//  printf(" Adresa: "); 
+//  scanf("%s", &ucenik[i].adresa); 
+//  printf(" Razred: "); 
+//  scanf("%d",&ucenik[i].razred); 
+//  printf(" Odeljenje: "); 
+//  scanf("%d",&ucenik[i].odeljenje); 
+//  fprintf(dato,"%-15s%-15s%-15s%2d%2d\n",ucenik[i].ime, 
+//  ucenik[i].prezime, ucenik[i].adresa, 
+//  ucenik[i].razred, ucenik[i].odeljenje); 
+//  } 
+//  fclose(dato); 
+//  printf("\n\n Datoteka je kreirana.\n"); 
+//  printf("\n Rezred za pretragu: "); 
+//  scanf("%d",&x); 
+//  if((dato=fopen("ucenik.txt","r"))==NULL) 
+//  { 
+//  printf("\n Greska pri otvaranju datoteke!"); 
+//  exit(1); 
+//  } 
+//  printf("\n -Ucenici %d-og razreda-\n", x); 
+//  for(i=0; i<n; i++) 
+//  { 
+//  fscanf(dato, "%s%s%s%d%d",&ucenik[i].ime, &ucenik[i].prezime, 
+//  &ucenik[i].adresa,&ucenik[i].razred,&ucenik[i].odeljenje); 
+//  if(ucenik[i].razred==x) 
+//  printf(" %-10s%-10s%-15s%2d%2d\n",ucenik[i].ime, ucenik[i].prezime, 
+//  ucenik[i].adresa, ucenik[i].razred, ucenik[i].odeljenje); 
+//  } 
+//  fclose(dato); 
+//  getche(); 
+//  return 0; 
+// }
+
+// #include <stdio.h> 
+// typedef struct student 
+// { 
+//  char ime[15]; 
+//  char prezime[15]; 
+//  int predavanja; 
+//  int kolokvijumi; 
+//  int ispit; 
+//  int ukupanBrBodova; 
+// }STUDENT; 
+// main() 
+// { 
+//  STUDENT studenti[5]; 
+//  int i, brp=0, brn=0; 
+//  FILE *f, *p, *n; 
+//  char ime1[20], ime2[20], ime3[20]; 
+//  printf("\n Ime datoteke sa podacima: "); 
+//  scanf("%s",&ime1); 
+//  printf(" Ime datoteke za polozene: "); 
+//  scanf("%s",&ime2); 
+//  printf(" Ime datoteke za nepolozene: "); 
+//  scanf("%s",&ime3); 
+//  f=fopen(ime1, "r"); 
+//  if(f == NULL) 
+//  { 
+//  printf("Greska prilikom otvaranja datoteke!\n"); 
+//  return 1; 
+//  } 
+//  p=fopen(ime2, "w"); 
+//  if(p == NULL) 
+//  { 
+//  printf("Greska prilikom otvaranja datoteke!\n"); 
+//  return 1; 
+//  } 
+//  n=fopen(ime3, "w"); 
+//  if(n == NULL) 
+//  { 
+//  printf("Greska prilikom otvaranja datoteke!\n"); 
+//  return 1; 
+//  } 
+//  for(i=0;i<5;i++) 
+//  { 
+//  fscanf(f, "%s%s%d%d%d", &studenti[i].ime, &studenti[i].prezime, 
+//  &studenti[i].predavanja, &studenti[i].kolokvijumi, 
+//  &studenti[i].ispit); 
+//  studenti[i].ukupanBrBodova = (studenti[i].predavanja + 
+//  studenti[i].kolokvijumi + studenti[i].ispit); 
+//  if(studenti[i].ukupanBrBodova>50) 
+//  { 
+//  fprintf(p, "%s %s %d\n", studenti[i].ime, studenti[i].prezime, 
+//  studenti[i].ukupanBrBodova); 
+//  brp++; 
+//  } 
+//  else 
+//  { 
+//  fprintf(n, "%s %s %d\n", studenti[i].ime, studenti[i].prezime, 
+//  studenti[i].ukupanBrBodova); 
+//  brn++;
+//  } 
+//  } 
+//  fclose(f); 
+//  fclose(p); 
+//  fclose(n); 
+//  printf ("\n Datoteke su kreirane!\n"); 
+//  printf (" Broj studenata koji su polozili: %d\n", brp); 
+//  printf (" Broj studenata koji nisu polozili: %d\n", brn); 
+//  getche(); 
+//  return 0; 
+//}  
