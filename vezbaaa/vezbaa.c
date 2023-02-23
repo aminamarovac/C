@@ -486,3 +486,43 @@
 //  getche(); 
 //  return 0; 
 //}  
+
+
+// #include <stdio.h> 
+// #define MAX 100 
+// typedef struct artikli 
+// { 
+//  int barKod; 
+//  char ime[30]; 
+//  float cena; 
+//  float PDV; 
+// } ARTIKLI; 
+// main() 
+// { 
+//  ARTIKLI artikal[MAX]; 
+//  int i=0; 
+//  FILE *dato1, *dato2; 
+//  if((dato1=fopen("proizvodiPDV.txt", "r"))==NULL) 
+//  { 
+//  printf("\n Greska pri otvaranju datoteke!"); 
+//  exit(1); 
+//  } 
+//  if((dato2=fopen("proizvodiPDVNovo.txt", "w"))==NULL) 
+//  { 
+//  printf("\n Greska pri otvaranju datoteke!"); 
+//  exit(1); 
+//  } 
+//  while(1) 
+//  { 
+//  fscanf(dato1, "%d %s %f %f", &artikal[i].barKod, &artikal[i].ime, 
+//  &artikal[i].cena, &artikal[i].PDV); 
+//  if(feof(dato1)) break; 
+//  artikal[i].cena*=(1+artikal[i].PDV); 
+//  fprintf(dato2, "%5d %-15s %4.2f\n", 
+//  artikal[i].barKod, artikal[i].ime, artikal[i].cena); 
+//  i++; 
+//  } 
+//  fclose(dato1); fclose(dato2); 
+//  printf("\n Datoteka je formirana!\n"); 
+//   return 0; 
+// }
